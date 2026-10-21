@@ -75,10 +75,10 @@ class MainActivity : AppCompatActivity() {
             toast("Produto inserido!")
 
             // Limpa os campos e devolve o cursor ao campo Nome
-            binding.editProductName.text.clear()
-            binding.editProductPrice.text.clear()
-            binding.editProductDescription.text.clear()
-            binding.editProductQuantity.text.clear()
+            binding.editProductName.text?.clear()
+            binding.editProductPrice.text?.clear()
+            binding.editProductDescription.text?.clear()
+            binding.editProductQuantity.text?.clear()
             binding.editProductName.requestFocus()
         }
     }
