@@ -1,7 +1,10 @@
 # AppRoomProduto: Cadastro de Produtos com Room SQLite
 
-**Aluno(a):** Seu Nome Completo
-**RA:** 000000
+**Participantes:**
+
+- Guilherme Pompeo Verrone - RA: 216361
+- Julia Lopez - RA: 241953
+
 **Disciplina:** Programação para Dispositivos Móveis
 **Professor(a):** Nome do Professor
 
