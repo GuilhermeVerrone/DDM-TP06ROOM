@@ -19,7 +19,24 @@ usando persistência local com Room (SQLite).
 
 ## Prints do app
 ![Tela inicial](docs/prints/tela-inicial.png)
-![Logcat com a listagem](docs/prints/logcat.png)
+Saída real do Logcat (filtro `tag:TAG`), capturada no emulador:
+
+```
+I TAG     : Produto inserido: Teclado - R$149.9
+I TAG     : Produto inserido: Mouse - R$59.0
+I TAG     : Produto inserido: Monitor - R$899.9
+I TAG     : Produto = Teclado, Preço = R$149.9, Descrição = Teclado USB, Qtd = 10
+I TAG     : Produto = Mouse, Preço = R$59.0, Descrição = Mouse optico, Qtd = 25
+I TAG     : Produto = Monitor, Preço = R$899.9, Descrição = Monitor 24 pol, Qtd = 5
+I TAG     : Produto = Mouse, Preço = R$59.0, Descrição = Mouse optico, Qtd = 25
+I TAG     : Produto = Teclado, Preço = R$129.9, Descrição = Teclado USB, Qtd = 10
+I TAG     : Produto = Mouse, Preço = R$59.0, Descrição = Mouse optico, Qtd = 25
+I TAG     : Produto = Monitor, Preço = R$899.9, Descrição = Monitor 24 pol, Qtd = 5
+I TAG     : Produto = Teclado, Preço = R$129.9, Descrição = Teclado USB, Qtd = 10
+I TAG     : Produto = Monitor, Preço = R$899.9, Descrição = Monitor 24 pol, Qtd = 5
+```
+
+Arquivo completo: [docs/prints/logcat.txt](docs/prints/logcat.txt)
 
 ## Parte A: Complemento prático
 
