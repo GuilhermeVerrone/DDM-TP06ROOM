@@ -13,6 +13,7 @@ usando persistência local com Room (SQLite).
 - Kotlin
 - Room 2.8.4 (SQLite) com KSP
 - ViewBinding
+- Material 3 (cards, campos outlined e tema verde-azulado)
 - Corrotinas (lifecycleScope)
 
 > **Observação sobre versões:** o tutorial usa Room 2.6.1 + `kapt`. Este projeto usa o Android Gradle Plugin 9, cujo Kotlin embutido não é compatível com o `kapt`, então usei **KSP** e subi o Room para 2.8.4 (o 2.6.1 com KSP falhava com `unexpected jvm signature V`). O código das anotações (`@Entity`, `@Dao`, `@Database`) é o mesmo.
@@ -33,6 +34,9 @@ I TAG     : Produto = Teclado, Preço = R$129.9, Descrição = Teclado USB, Qtd 
 I TAG     : Produto = Mouse, Preço = R$59.0, Descrição = Mouse optico, Qtd = 25
 I TAG     : Produto = Monitor, Preço = R$899.9, Descrição = Monitor 24 pol, Qtd = 5
 I TAG     : Produto = Teclado, Preço = R$129.9, Descrição = Teclado USB, Qtd = 10
+I TAG     : Produto = Mouse, Preço = R$59.0, Descrição = Mouse optico, Qtd = 25
+I TAG     : Produto = Monitor, Preço = R$899.9, Descrição = Monitor 24 pol, Qtd = 5
+I TAG     : Produto = Teclado, Preço = R$129.9, Descrição = Teclado USB, Qtd = 10
 I TAG     : Produto = Monitor, Preço = R$899.9, Descrição = Monitor 24 pol, Qtd = 5
 ```
 
@@ -45,10 +49,10 @@ Arquivo completo: [docs/prints/logcat.txt](docs/prints/logcat.txt)
 
 ```kotlin
 productDao.insertAll(product)
-binding.editProductName.text.clear()
-binding.editProductPrice.text.clear()
-binding.editProductDescription.text.clear()
-binding.editProductQuantity.text.clear()
+binding.editProductName.text?.clear()
+binding.editProductPrice.text?.clear()
+binding.editProductDescription.text?.clear()
+binding.editProductQuantity.text?.clear()
 binding.editProductName.requestFocus()
 ```
 Print: ![A1](docs/prints/a1.png)
@@ -106,7 +110,8 @@ suspend fun deleteAll()
 @Delete
 suspend fun delete(product: Product)
 ```
-Print: ![A6](docs/prints/a6.png)
+Print: ![A6 - excluir por id](docs/prints/a6-por-id.png)
+![A6 - excluir todos](docs/prints/a6.png)
 
 ### A7. Atualizar produto
 **O que foi feito:** o usuário informa o id e o novo preço; o app busca o produto, cria uma cópia com o preço novo (`copy`) e grava com `@Update`.
